@@ -1,4 +1,5 @@
 import cv2
+from matplotlib import image
 import numpy as np
 import os
 import matplotlib.pyplot as plt
@@ -37,17 +38,18 @@ for i in range(len(file_name_list)):
 
     # a=np.array(retinaface)
     
-for j in range(len(retinaface)):
-    a=np.asarray(retinaface[j])
-    img01=Image.fromarray(a)
-    print(img01)
-    img01.show()
-    img01.save(f'00{j}.jpg','JPEG')
+    for j in range(len(retinaface)):
+        a=np.array(retinaface[j])
+        img01=Image.fromarray(a)
+        img01=img01.resize((150,150))
+        print(img01)
+        img01.show()
+        img01.save(f'd:/project/DL/retina_data/00{j}.jpg','JPEG')
+        # cv2.imwrite(f'd:/project/DL/retina_data/00{j}.jpg',image)
 
+'''
+사이즈문제 아님 리사이즈로 사이즈 다 맞춰봄
+파일번호 문제 아님 +1해봄 003까지 생성됨
 
-# image_cut=cv2.imread("d:/project/DL/retina_data/01.png")
-# retinaface=RetinaFace.extract_faces(img_path="d:/project/DL/retina_data/01.png",align=True,threshold=0.5)
-# def extract_faces(img_path, threshold=0.9, model = None, align = True, allow_upscaling = True):
-# print(retinaface[0].shape)  #(65, 47, 3)
-
+'''
 
