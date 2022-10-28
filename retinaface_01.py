@@ -6,7 +6,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-img_path="D:/project/DL/retina_data/img01.jpg"
+img_path="D:/project/DL/retina_data/img01.png"
 # obj=RetinaFace.detect_faces(img_path)
 obj=RetinaFace.extract_faces(img_path,align=True)
 img=cv2.imread(img_path)
